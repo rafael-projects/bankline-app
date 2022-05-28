@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { MovimentacaoListComponent } from './movimentacao-list.component';
 
 describe('MovimentacaoListComponent', () => {

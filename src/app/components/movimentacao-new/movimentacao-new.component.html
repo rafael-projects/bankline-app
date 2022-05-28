@@ -1,1 +1,39 @@
-<p>movimentacao-new on</p>
+
+<div class="container">
+    <div class="jumbotron">
+        <h1 class="display-6">Movimentação</h1>
+        <p class="lead-1">Inclusão de uma nova Movimentação</p>
+        <hr class="my-2">
+    <div class="row g-2">
+            <div class="col-md-3">
+                <label for="iData"  class="form-label">Data</label>
+                <input type="date" [(ngModel)]="dataHora" class="from-control" id="iData">
+            </div>
+            <div class="col-md-9">
+                <label for="iCorrentista"  class="form-label">Correntistas</label>
+                <select id="iCorrentista" [(ngModel)]="correntista" class="form-select"> 
+                        <option *ngFor="let c of correntistas" [ngValue]="c">cpf: {{c.cpf}}, nome: {{c.nome}}</option>
+                </select>
+            </div>
+            <div class="col-9">
+                <label for="iDescricao" class="form-label">Descrição</label>
+                <input type="text" [(ngModel)]="descricao" class="form-control" id="iDescricao">
+            </div>
+            <div class="col-md-5">
+                <label for="iTipo" class="frorm-label">Tipo Movimentação</label>
+                <select id="iTipo" [(ngModel)]="tipo" class="form-select">
+                    <option selected>RECEITA</option>
+                    <option>DESPESA</option>  
+                </select>
+            </div>
+            <div class="col-md-4">
+                <label for="iValor" class="form-label">R$ Valor</label>
+                <input type="text" [(ngModel)]="valor" currencyMask [options] = "{prefix: 'R$', thousands: '.', decimal: ','}" class="form-control" id="iDescricao">
+            </div>
+            <div class="d-grid gap-2 d-md-flex">
+                <button  class="btn btn-outline-primary me-md-2" (click)="save()" type="button">Confirmar</button>
+                <a routerLink="/movimentacoes" class="btn btn-outline-secondary">Cancelar</a>
+            </div>
+    </div>
+    </div>
+</div>
